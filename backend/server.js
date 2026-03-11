@@ -5,6 +5,7 @@ require("dotenv").config();
 const authRoutes = require("./routes/auth");
 const authMiddleware = require("./middleware/authMiddleware");
 const productRoutes = require("./routes/products");
+const dashboardRoutes = require("./routes/dashboard");
 
 
 const pool = require("./db");
@@ -33,6 +34,8 @@ app.get("/protected", authMiddleware, (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+
+app.use("/api/dashboard", dashboardRoutes);
 
 const PORT = process.env.PORT || 5000;
 
