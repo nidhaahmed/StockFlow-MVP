@@ -13,7 +13,7 @@ function Login() {
 
     localStorage.setItem("token", res.data.token);
 
-    window.location.href = "/dashboard";
+    window.location.replace("/dashboard");
   };
 
   return (
